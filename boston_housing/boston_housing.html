@@ -204,7 +204,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># Import libraries necessary for this project</span>
@@ -236,16 +236,18 @@ div#notebook {
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Boston housing dataset has 489 data points with 4 variables each.
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/Users/tgaponov/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  &quot;This module will be removed in 0.20.&quot;, DeprecationWarning)
+/Users/tgaponov/anaconda/lib/python2.7/site-packages/sklearn/learning_curve.py:23: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
+  DeprecationWarning)
 </pre>
 </div>
 </div>
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/tgaponov/anaconda/lib/python2.7/site-packages/sklearn/learning_curve.py:23: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the functions are moved. This module will be removed in 0.20
-  DeprecationWarning)
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Boston housing dataset has 489 data points with 4 variables each.
 </pre>
 </div>
 </div>
@@ -284,23 +286,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -327,7 +329,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -2542,7 +2544,7 @@ Predicted selling price for Client 3&apos;s home: $919,800.00
 Price for Client 1's home: 415,400.00 <br>
 Price for Client 2's home: 223,608.00 <br>
 Price for Client 3's home: 919,800.00 <br></p>
-<p>Those results are reasonable. Client 2 has the lowest price as his house has the smallest number of rooms, the highest neighborhood poverty level and students-to-teachers ratio. However, it is sufficiently above the minimum (which is 105,000) and roughly falls into one standard deviation from the median (median is 438,900 and standard deviation is 165,340, so strictly speaking it is slightly below one SD). Client 1 has a bit bigger house but the price almost twice is high and close to the mean and median prices, this is because the student-teacher ratio is substantially lower and poverty index drops twice. The home of Client 3 almost reaches the maximum, but as we can see it has the biggest number of rooms, the lower student-teacher ratio and quite insignificant poverty level.</p>
+<p>Those results are reasonable. Client 2 has the lowest price as his house has the smallest number of rooms, the highest neighborhood poverty level and students-to-teachers ratio. However, it is sufficiently above the minimum (which is 105,000) and roughly falls into one standard deviation from the median (median is 438,900 and standard deviation is 165,171, so strictly speaking it is slightly below one SD). Client 1 has a bit bigger house but the price almost twice is high and close to the mean and median prices, this is because the student-teacher ratio is substantially lower and poverty index drops twice. The home of Client 3 almost reaches the maximum, but as we can see it has the biggest number of rooms, the lower student-teacher ratio and quite insignificant poverty level.</p>
 
 </div>
 </div>
