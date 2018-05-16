@@ -1,3 +1,5 @@
+Version of python > 3
+
 There are two ways to interact with the code:
 
 1. You can play with the model:
@@ -9,4 +11,4 @@ There are two ways to interact with the code:
   - clone the repo 
   - download the train.csv from [Kaggle competition page](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) to the data directory
   - preprocess the data and produce train_pre.csv with the preprocessing.ipynb (this will also overwrite the tokenizer in the pickles directory)
-  - run the learning.ipynb: import statements, definition of the functions (second cell), BASIC SETUP section and TRAINING AND SAVING THE FINAL MODEL section
+  - run the learning.ipynb: import statements, definition of the functions (second cell), BASIC SETUP section and TRAINING AND SAVING THE FINAL MODEL section (this will also overwrite some files in the results directory)
